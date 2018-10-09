@@ -1,0 +1,80 @@
+<footer class="footer bg-white">
+    <div class="footer-social">
+        <div class="footer-container clearfix">
+            <div class="social-list">
+                <a class="social linkendin" target="blank" href="https://linkedin.com/in/ellialdero" title=" Linkendin"
+                    data-hover="Linkendin">Linkendin</a>
+                <a class="social github" target="blank" href="https://github.com/ellialdero" title=" Github" data-hover="GitHub">GitHub</a>
+                <a class="social twitter" target="blank" href="http://twitter.com/ellialdero" title=" Twitter"
+                    data-hover="Twitter">Twitter</a>
+                <a class="social stackoverflow" target="blank" href="https://stackoverflow.com/users/10221274/a-elliot"
+                    title=" Stackoverflow" data-hover="StackOverflow">StackOverflow</a>
+                <a class="social facebook" target="blank" href="https://facebook.com/ellialdero" title=" Facebook"
+                    data-hover="Facebook">Facebook</a>
+                <a class="social instagram" target="blank" href="http://instagram.com/ellialdero" title=" Instagram"
+                    data-hover="Instagram">Instagram</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-meta">
+        <div class="footer-container">
+            <div class="meta-item meta-copyright">
+                <div class="meta-copyright-info">
+                    <a href="/" class="info-logo">
+                        <img src="{{ site.url }}/style/images/logo-liberxue.png" title=" LiberTheme" data-hover="LiberTheme"
+                            alt="LiberTheme" /> </a>
+                    <div class="info-text">
+                        <p>Theme is <a href="http://jekyllthemes.org/themes/Liberxue-Theme/" title="Libertheme"
+                                data-hover="Libertheme" target="_blank">Libertheme</a> by <a href="http://www.libertheme.github.io/about"
+                                target="_blank">liber</a></p>
+                        <p>Powered by <a href="{{ site.url }}/tags/#Jekyll" title="Jekyll" data-hover="Jekyll" target="_blank"
+                                rel="nofollow">Jekyll</a></p>
+                        <p>&copy; 2018 <a href="http://jekyllthemes.org" title=" JekyllThemes" data-hover="JekyllThemes">JekyllThemes</a></p>
+                        <p>Tổng có：{{paginator.total_posts}} bài viết</p>
+                    </div>
+                </div>
+            </div>
+            <div class="meta-item meta-posts">
+                <h3 class="meta-title">Bài viết được ghim</h3>
+                <!--Phần đầu-->
+                {% for post in site.posts limit:15 %}
+                {% if post.istop %}
+                <li><a href="{{ post.url }}" title=" {{ post.title }}" data-hover="{{ post.title }}">{{
+                        post.title }}</a></li>
+                {% endif %}
+                {% endfor %}
+                <!--Kết thúc-->
+            </div>
+            <div class="meta-item meta-comments">
+                <h3 class="meta-title">Bài viết mới nhất</h3>
+                {% for post in site.posts limit:14 %}
+                {% if post.book %}
+                <li><a href="{{ post.url }}" title=" {{ post.title }}" data-hover="{{ post.title }}">{{ post.title }}</a></li>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.js"></script>
+<script src="/search/js/cb-search.js"></script>
+<script>
+    $(function () {
+        setTimeout(function () {
+            $('code').removeClass('hljs');
+            $('code').removeClass('language');
+        }, 90);
+    });
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
